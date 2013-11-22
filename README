@@ -1,0 +1,22 @@
+HISTORY 
+
+After using git add/commit with the --patch option, I wanted to be able to have the same
+interactive patch functionality.
+
+When searching for programs to do this, I found the options to be surprisingly lacking.
+
+'sdiff' came up the most in searches. But this wasn't what I wanted, the
+format wasn't intuitive and reading the output difficult.
+
+So I made a simple proof of concept, which splits a diff into hunks, then interactively
+prompts the user to apply them or not.
+
+So patchadams is two programs, a diff-splitter (splitpatch) and a interactive patch prompt.
+
+Currently splitpatch supports unified diff format, and should work with git diff.
+
+FUTURE GOALS
+
+- Option to save hunkfiles to a specific location
+- Option to edit hunks
+- Combine accepted hunks into one file, then apply at the end.
